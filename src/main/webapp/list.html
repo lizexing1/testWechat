@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>这个是商城首页</title>
+</head>
+<body>
+
+<a href="http://www.lizexing.cn/wechat/user/list">点击一下看session</a>
+
+<a href="javascript:toPay(goodsId)">往购买商品页面跳</a>
+
+<script type="text/javascript">
+
+	//这个函数的作用就是根据商品id调用下后台，看看当前用户对这个商品有没有待支付的状态
+	//如果有待支付的状态，就让用户支付，而不需要重复下订单再支付
+	function toPay(goodsId){
+		$.ajax({
+			type:"post",
+			url:"http://www.lizexing.cn/wechat/wechatBack/getWechatOrderStatus",
+			data:{"goodsId":"123"},
+			success:function(data){
+				
+				if("超时或没有待支付订单"){
+					window.location.href="http://www.lizexing.cn/wechat/goods.html?goodsId="+goodsId;
+				}else{
+					window.location.href="http://www.lizexing.cn/wechat/rePay.html?goodsId="+goodsId;
+				}
+				
+			}
+		});
+		
+	}
+</script>
+</body>
+</html>
