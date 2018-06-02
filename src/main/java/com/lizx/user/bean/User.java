@@ -4,7 +4,7 @@ import java.sql.Date;
 /**
  * 
  * <pre>项目名称：1511BWechatTest    
- * 类名称：User    
+ * 类名称：User    sdff
  * 类描述：    用户信息类，对应用户表
  * 创建人：李泽兴 lizexing@163.com    
  * 创建时间：2018年5月25日 下午7:36:18    
