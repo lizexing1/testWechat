@@ -17,6 +17,7 @@ public class User {
 
 	/****/
 	private String id;
+	
 	/** 用户名	**/
 	private String name;
 	/**用户昵称**/
